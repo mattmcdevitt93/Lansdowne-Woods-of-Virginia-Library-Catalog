@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>LibarayCatalog</title>
+  <title>Libaray Catalog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
 <body>
+<h1>Lansdowne Woods of Virginia Library Catalog</h1>
+<%= link_to 'New Book', new_book_path %>
 
+<hr>
 <%= yield %>
+
+<script src="app/assets/javascript/main.js"></script>
+
 
 </body>
 </html>
