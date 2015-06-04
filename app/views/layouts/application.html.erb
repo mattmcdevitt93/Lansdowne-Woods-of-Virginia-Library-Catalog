@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Libaray Catalog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<title>Libaray Catalog</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<%= stylesheet_link_tag 'application', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
-<h1>Lansdowne Woods of Virginia Library Catalog</h1>
-<%= link_to 'New Book', new_book_path %>
+	<div class='container'>
+		<div class='row'>
+			<div class='col-md-8'>
+			<h1><%= link_to 'Lansdowne Woods of Virginia Library Catalog', root_path %></h1>
+			</div>
+				<%= link_to 'New Book', new_book_path, class: 'add_btn col-md-2 col-md-offset-2 btn btn-default disabled' %>
+				<%= link_to 'contact support', contact_path, class: 'add_btn col-md-2 col-md-offset-2 btn btn-warning' %>
+				<%= link_to 'Login', login_path, class: 'add_btn col-md-2 col-md-offset-2 btn btn-primary' %>
+			<hr>
+		</div>
+		<%= yield %>
 
-<hr>
-<%= yield %>
 
-<script src="app/assets/javascript/main.js"></script>
-
-
+	</div>
 </body>
 </html>

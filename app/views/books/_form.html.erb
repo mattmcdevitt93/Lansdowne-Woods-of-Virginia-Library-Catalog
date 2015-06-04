@@ -13,27 +13,27 @@
 
   <div class="field">
     <%= f.label :Call_num %><br>
-    <%= f.number_field :Call_num %>
+    <%= f.number_field :Call_num, step: 0.001  %>
   </div>
   <div class="field">
     <%= f.label :Title %><br>
-    <%= f.text :Title %>
+    <%= f.text_field :Title %>
   </div>
   <div class="field">
     <%= f.label :Subtitle %><br>
-    <%= f.text :Subtitle %>
+    <%= f.text_field :Subtitle %>
   </div>
   <div class="field">
     <%= f.label :Author_first %><br>
-    <%= f.text :Author_first %>
+    <%= f.text_field :Author_first %>
   </div>
   <div class="field">
     <%= f.label :Author_last %><br>
-    <%= f.text :Author_last %>
+    <%= f.text_field :Author_last %>
   </div>
   <div class="field">
     <%= f.label :Copyright %><br>
-    <%= f.date_select :Copyright %>
+    <%= f.number_field :Copyright %>
   </div>
   <div class="field">
     <%= f.label :Subject %><br>

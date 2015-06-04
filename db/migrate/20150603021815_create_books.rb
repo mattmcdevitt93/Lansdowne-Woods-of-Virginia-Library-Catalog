@@ -6,7 +6,7 @@ class CreateBooks < ActiveRecord::Migration
       t.string :Subtitle
       t.string :Author_first
       t.string :Author_last
-      t.date :Copyright
+      t.integer :Copyright
       t.text :Subject
       t.text :Annotation
 

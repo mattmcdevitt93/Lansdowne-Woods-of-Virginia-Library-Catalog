@@ -1,7 +1,15 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
+
+  # Static Pages  
   def home
+  end
+
+  def contact
+  end
+
+  def login
   end
 
   # GET /books

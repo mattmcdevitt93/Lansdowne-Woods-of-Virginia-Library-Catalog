@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20150603021815) do
     t.string   "Subtitle"
     t.string   "Author_first"
     t.string   "Author_last"
-    t.date     "Copyright"
+    t.integer  "Copyright"
     t.text     "Subject"
     t.text     "Annotation"
     t.datetime "created_at",   null: false

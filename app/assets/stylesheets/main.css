@@ -1,0 +1,14 @@
+div {
+	border: 1px solid black
+}
+
+body {
+	background-color: #cccccc;
+	background-image: url('http://i.imgur.com/XQuiwrN.png');
+}
+
+/*-------------------------------------------------------*/
+
+.add_btn {
+	color: black;
+}
