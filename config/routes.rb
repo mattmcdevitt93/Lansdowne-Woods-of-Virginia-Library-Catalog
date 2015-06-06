@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :books
-  root 'books#home'
+  root 'books#index'
   get '/contact' => 'books#contact'
   get '/login' => 'books#login'
   # The priority is based upon order of creation: first created -> highest priority.

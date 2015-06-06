@@ -1,11 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
-
-  # Static Pages  
-  def home
-  end
-
   def contact
   end
 
@@ -14,9 +9,9 @@ class BooksController < ApplicationController
 
   # GET /books
   # GET /books.json
-  def index
+def index
     @books = Book.all
-  end
+end
 
   # GET /books/1
   # GET /books/1.json
