@@ -3,33 +3,25 @@
 <head>
 	<title>Libaray Catalog</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<%= stylesheet_link_tag 'application', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
 <body>
-	<div class='container'>
-		<div class='row'>
-			<div class='col-md-8'>
+		<div class='headder'>
+			<div class='col-md-10'>
 				<h1>
 					<%= link_to (image_tag "LansdowneWoodsLogo-Screen.png", class: 'masthead_image pull-left '), root_path %>
 				</h1>
 			</div>
-			<%= link_to 'Add New Book', new_book_path, class: 'add_btn col-md-2 col-md-offset-2 btn btn-warning' %>
-			<%= link_to 'Login Computer', login_path, class: 'add_btn col-md-2 col-md-offset-2 btn btn-primary' %>
-			<%= link_to 'contact support', contact_path, class: 'add_btn col-md-2 col-md-offset-2 btn btn-primary' %>
-			<div class='col-md-12 btn btn-default btn-lg active' id='search'>
-				Search Library by 
-				<select id='type'>
-					<option value="Call Number">Call Number</option>
-					<option value="Title">Title</option>
-					<option value="Author">Author</option>
-					<option value="Subject">Subject</option>
-					<option value="Copyright">Copyright</option>
-				</select> - 
-				<input type="Search" name="Search"> - 
-				<input type="submit" value="Submit" class='btn btn-primary'>
-			</div>
+			<%= link_to 'Add New Book', new_book_path, id: 'addBtn', class: 'addBtn col-md-2 btn btn-warning' %>
+			<%= link_to 'Login Computer', login_path, class: 'col-md-2 btn btn-primary' %>
+			<%= link_to 'Contact Support', contact_path, class: 'col-md-2 btn btn-primary' %>
+		</div>
+	<div class='container'>
+
+		<div class='buffer'>
 		</div>
 
 		<%= yield %>

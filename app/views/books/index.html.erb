@@ -1,39 +1,57 @@
-<div class='col-md-12'>
+<div class='btn-default btn-lg active search' id='search'>
+  Search Library by 
+  <select id='type'>
+    <option value="Call Number">Call Number</option>
+    <option value="Title">Title</option>
+    <option value="Author_last">Author</option>
+    <option value="Subject">Subject</option>
+    <option value="Copyright">Copyright</option>
+  </select> - 
+  <input type="Search" name="Search" id='searchBar'> - 
+  <input type="submit" value="Search" class='btn btn-primary' onclick='Model.search()'>
+</div>
+
+<div class='btn-success btn-lg active results' id='results'>
+  Results - There are X books that match your search.
+  
+</div>
+
+<div class='col-md-12 table'>
   <div id="notice" class='col-md-12'><%= notice %></div>
   <% if @books != nil %>
 
-  <h1>Listing Books</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Call num</th>
-          <th class='col-md-2'>Title</th>
-          <th>Subtitle</th>
-          <th>Author first</th>
-          <th>Author last</th>
-          <th>Copyright</th>
-          <th>Subject</th>
-          <th class='col-md-4'>Annotation</th>
-          <th colspan="2"></th>
-        </tr>
-      </thead>
+  <h1>Book Listings</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Call #</th>
+        <th class='col-md-2'>Title</th>
+        <th>Subtitle</th>
+        <th>Author first</th>
+        <th>Author last</th>
+        <th>Copyright</th>
+        <th>Subject</th>
+        <!-- <th class='col-md-4'>Annotation</th> -->
+        <th class='col-md-1'></th>
+      </tr>
+    </thead>
 
-      <tbody>
-        <% @books.each do |book| %>
-        <tr>
-          <td><%= book.Call_num %></td>
-          <td><%= book.Title %></td>
-          <td><%= book.Subtitle %></td>
-          <td><%= book.Author_first %></td>
-          <td><%= book.Author_last %></td>
-          <td><%= book.Copyright %></td>
-          <td><%= book.Subject %></td>
-          <td><%= book.Annotation.truncate(100) %></td>
-          <td><%= link_to 'Show', book %></td>
-          <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        </tr>
-      </tbody>
+    <tbody>
+      <% @books.each do |book| %>
+      <tr id='<%= book.id %>' class='tbrow' >
+        <td class='Call_num'><%= book.Call_num %></td>
+        <td class='Title'><%= book.Title %></td>
+        <td class='Subtitle'><%= book.Subtitle %></td>
+        <td class='Author_first'><%= book.Author_first %></td>
+        <td class='Author_last'><%= book.Author_last %></td>
+        <td class='Copyright'><%= book.Copyright %></td>
+        <td class='Subject'><%= book.Subject %></td>
+        <!-- <td class='Annotation'><%= book.Annotation.truncate(250) %></td> -->
+        <td ><%= link_to 'Show More', book, class: 'btn btn-primary' %></td>
+      </tr>
       <% end %>
+    </tbody>
+
   </table>
   <% else %>
   No Search Results.
