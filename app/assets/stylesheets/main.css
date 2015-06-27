@@ -54,6 +54,9 @@ th {
 	position: fixed;
 	z-index: 5;
 	margin-top: 55px;
+}
+
+.hidden {
 	visibility: hidden;
 }
 
