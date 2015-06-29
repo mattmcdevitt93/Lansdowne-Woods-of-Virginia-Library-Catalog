@@ -3,8 +3,7 @@ var Cookie = {};
 var Model = {};
 
 Model.authCode = '12345';
-Model.Auth = false;
-Model.addButton = document.getElementById('addBtn');
+Model.addButton = $('.addbtn');
 Model.showTable = false;
 Model.searchSensitivity = 5;
 
