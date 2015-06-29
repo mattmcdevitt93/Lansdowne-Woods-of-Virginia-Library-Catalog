@@ -247,6 +247,7 @@ Cookie.checkCookie = function(cookie) {
 	if ((Cookie.getCookie(cookie) === 'null') || (Cookie.getCookie(cookie) === undefined) || (Cookie.getCookie(cookie) === null)) {
     console.log('No Auth'); // change this once i get the ability to pull the next name from the back end
     Model.disable();
+    Model.enable();
 } else {
 	console.log('Cookie value is = ' + Cookie.getCookie(cookie));
 	Model.enable();
