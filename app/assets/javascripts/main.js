@@ -232,7 +232,9 @@ Model.login = function() {
 };
 
 Model.disable = function() {
-	$('.addBtn').addClass('disabled');
+	// $('.addBtn').addClass('disabled');
+	$('.addBtn').removeClass('disabled');
+
 };
 
 Model.enable = function() {
