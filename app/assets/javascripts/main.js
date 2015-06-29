@@ -2,7 +2,7 @@
 var Cookie = {};
 var Model = {};
 
-Model.authCode = '12345';
+Model.authCode = 12345;
 Model.addButton = document.getElementById('addBtn');
 Model.showTable = false;
 Model.searchSensitivity = 5;
@@ -10,7 +10,6 @@ Model.searchSensitivity = 5;
 
 $(document).ready(function() {
 	console.log( 'ready!' );
-	Cookie.checkCookie('Auth');
 	Model.events();
 });
 

@@ -15,9 +15,13 @@
 					<%= link_to (image_tag "LansdowneWoodsLogo-Screen.png", class: 'masthead_image pull-left '), root_path %>
 				</h1>
 			</div>
-			<%= link_to 'Add New Book', new_book_path, id: 'addBtn', class: 'addBtn col-md-2 btn btn-warning disabled' %>
+			<%= link_to 'Add New Book', new_book_path, id: 'addBtn', class: 'addBtn col-md-2 btn btn-warning' %>
 			<%= link_to 'Login Computer', login_path, class: 'col-md-2 btn btn-primary' %>
 			<%= link_to 'Contact Support', contact_path, class: 'col-md-2 btn btn-primary' %>
+
+			 <script type="text/javascript">
+				Cookie.checkCookie('Auth');
+  			</script>
 		</div>
 	<div class='container'>
 
