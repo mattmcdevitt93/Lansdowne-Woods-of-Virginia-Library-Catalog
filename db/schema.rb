@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150603021815) do
   enable_extension "plpgsql"
 
   create_table "books", force: true do |t|
-    t.float    "Call_num"
+    t.string   "Call_num"
     t.string   "Title"
     t.string   "Subtitle"
     t.string   "Author_first"
