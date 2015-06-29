@@ -1,12 +1,12 @@
 div {
 	/*border: 1px solid black*/
-	font-family: 'Crete Round', serif;
 }
 
 body {
 	background-color: #cccccc;
 	background-image: url('http://i.imgur.com/XQuiwrN.png');
-	font-size: 16px;
+	font-size: 18px;
+	font-family: 'Crete Round', serif;
 }
 
 td {
@@ -48,7 +48,8 @@ th {
 .search {
 	position: fixed;
 	z-index: 5;
-
+	background-color: #eee;
+	width: 80%;
 }
 
 .results {
