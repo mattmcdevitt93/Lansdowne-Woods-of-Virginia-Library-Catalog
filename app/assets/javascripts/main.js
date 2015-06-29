@@ -2,14 +2,15 @@
 var Cookie = {};
 var Model = {};
 
-Model.authCode = 12345;
+Model.authCode = '12345';
+Model.Auth = false;
 Model.addButton = document.getElementById('addBtn');
 Model.showTable = false;
 Model.searchSensitivity = 5;
 
 
 $(document).ready(function() {
-	console.log( 'ready!' );
+	console.log( 'ready!!!' );
 	Model.events();
 });
 
@@ -218,10 +219,8 @@ Model.hideAll = function () {
 Model.login = function() {
 	var loginInput = document.getElementById('auth').value;
 	var Auth = Model.authCode;
-	var verified = Cookie.getCookie('Auth');
 	console.log(loginInput);
 	console.log(Auth);
-	console.log(verified);
 	if (loginInput === Auth) {
 		console.log('Login Verified');
 		Cookie.makeCookie('Auth', loginInput);
@@ -232,9 +231,7 @@ Model.login = function() {
 };
 
 Model.disable = function() {
-	// $('.addBtn').addClass('disabled');
-	$('.addBtn').removeClass('disabled');
-
+	$('.addBtn').addClass('disabled');
 };
 
 Model.enable = function() {
