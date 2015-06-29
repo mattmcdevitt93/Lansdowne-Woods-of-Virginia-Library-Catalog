@@ -1,7 +1,7 @@
 class CreateBooks < ActiveRecord::Migration
   def change
     create_table :books do |t|
-      t.float :Call_num
+      t.string :Call_num
       t.string :Title
       t.string :Subtitle
       t.string :Author_first
