@@ -44,10 +44,10 @@ Model.search = function() {
 			error = 'Invalid_year';
 			console.log('Error Invalid Year');
 		}
-		s = 1;
+		s = 2;
 	}
 
-	if (error === false && type !== 'Call_num') {
+	if (error === false) {
 
 		for (var i = 0; i < queryLength; i++) {
 
@@ -67,37 +67,6 @@ Model.search = function() {
 }
 
 Model.results(r, keywords);
-} else if (error === false && type === 'Call_num') {
-	console.log('Call Num Search');
-	var n = parseInt(keywords);
-	console.log(n);
-	if (n === 'NaN') {
-		error = true;
-		Model.notice('Not a valid Call Number.');
-	} else {	
-	s = 3;
-
-		for (var i = 0; i < queryLength; i++) {
-
-			var a = queryData[i].innerHTML;
-			console.log(a);
-
-			if (error === false) {
-				var d = Model.getEditDistance(keywords, a);
-				console.log(d);
-			if (d < s) { // THE CHECK
-				console.log('MATCH', i);
-				console.log(queryData[i]);
-				r.push(queryData[i].parentNode.id);
-			}
-		} 
-
-	}
-	Model.results(r, keywords);
-
-}
-
-
 } else if (error === 'Invalid_year'){
 	Model.notice('Not a valid year to search by');
 } else {
