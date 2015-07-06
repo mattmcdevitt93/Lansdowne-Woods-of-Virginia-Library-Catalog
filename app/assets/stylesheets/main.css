@@ -1,11 +1,11 @@
 div {
-	border: 1px solid black
+	/*border: 1px solid black*/
 }
 
 body {
 	background-color: #cccccc;
 	background-image: url('http://i.imgur.com/XQuiwrN.png');
-	font-size: 14px;
+	font-size: 12px;
 	font-family: 'Crete Round', serif;
 }
 
