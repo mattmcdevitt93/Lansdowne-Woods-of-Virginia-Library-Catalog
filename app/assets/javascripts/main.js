@@ -27,8 +27,9 @@ Model.events = function () {
 
 Model.header_resize = function () {
 	console.log('resize');
-	var padding = $('.headder').height() + 10;
-	$('.buffer').css('height', padding);
+	var padding = $('.headder').height();
+	$('.buffer').css('height', padding + 10);
+	$('.masthead_image').css('height', padding - 15);
 };
 
 // ----------------------------------------------------------------------------
