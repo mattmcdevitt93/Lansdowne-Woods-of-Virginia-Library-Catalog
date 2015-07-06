@@ -12,40 +12,42 @@
   <% end %>
 
 <!-- Make rows even in a table -->
+<table>
+  <tr class="field">
+    <td><%= f.label :Call_num, class: 'form_field' %></td>
+    <td><%= f.text_field :Call_num, step: 0.001  %></td>
+  </tr>
+  <tr class="field">
+    <td><%= f.label :Title, class: 'form_field' %></td>
+    <td><%= f.text_field :Title %></td>
+  </tr>
+  <tr class="field">
+    <td><%= f.label :Subtitle, class: 'form_field' %></td>
+    <td><%= f.text_field :Subtitle %></td>
+  </tr>
+  <tr class="field">
+    <td><%= f.label :Author_last, class: 'form_field' %></td>
+    <td><%= f.text_field :Author_last %></td>
+  </tr>
+  <tr class="field">
+    <td><%= f.label :Author_first, class: 'form_field' %></td>
+    <td><%= f.text_field :Author_first %></td>
+  </tr>
+  <tr class="field">
+    <td><%= f.label :Copyright, class: 'form_field' %></td>
+    <td><%= f.number_field :Copyright %></td>
+  </tr>
+  <tr class="field">
+    <td><%= f.label :Subject, class: 'form_field' %></td>
+    <td><%= f.text_area :Subject %></td>
+  </tr>
+  <tr class="field">
+    <td><%= f.label :Annotation, class: 'form_field' %></td>
+    <td><%= f.text_area :Annotation %></td>
+  </tr>
+  </table>
+  <div class="actions" style='float: left;'>
+    <%= f.submit class: 'addBtn col-md-2 btn btn-warning' %> || 
+  </div>
 
-  <div class="field">
-    <%= f.label :Call_num, class: 'form_field' %>
-    <%= f.text_field :Call_num, step: 0.001  %>
-  </div>
-  <div class="field">
-    <%= f.label :Title %>
-    <%= f.text_field :Title %>
-  </div>
-  <div class="field">
-    <%= f.label :Subtitle %>
-    <%= f.text_field :Subtitle %>
-  </div>
-  <div class="field">
-    <%= f.label :Author_last %>
-    <%= f.text_field :Author_last %>
-  </div>
-  <div class="field">
-    <%= f.label :Author_first %>
-    <%= f.text_field :Author_first %>
-  </div>
-  <div class="field">
-    <%= f.label :Copyright %>
-    <%= f.number_field :Copyright %>
-  </div>
-  <div class="field">
-    <%= f.label :Subject %>
-    <%= f.text_area :Subject %>
-  </div>
-  <div class="field">
-    <%= f.label :Annotation %>
-    <%= f.text_area :Annotation %>
-  </div>
-  <div class="actions" >
-    <%= f.submit class: 'addBtn col-md-2 btn btn-warning' %>
-  </div>
 <% end %>
