@@ -9,16 +9,21 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
-<body>
+<body onresize='Model.header_resize()'>
 		<div class='headder'>
 			<div class='col-md-10'>
 				<h1>
 					<%= link_to (image_tag "LansdowneWoodsLogo-Screen.png", class: 'masthead_image pull-left '), root_path %>
 				</h1>
+			<div class='title'>
+				Wilson Library
 			</div>
+			</div>
+			<%= link_to 'Home Page', root_path, class: 'col-md-2 btn btn-default' %>
 			<%= link_to 'Add New Book', new_book_path, id: 'addBtn', class: 'addBtn col-md-2 btn btn-warning' %>
-			<%= link_to 'Login Computer', login_path, class: 'col-md-2 btn btn-primary' %>
-			<%= link_to 'Contact Support', contact_path, class: 'col-md-2 btn btn-primary' %>
+			<%= link_to 'Login Computer', login_path, class: 'col-md-2 btn btn-info' %>
+			<%= link_to 'Contact Support', contact_path, class: 'col-md-2 btn btn-default' %>
+
 
 			 <script type="text/javascript">
 				Cookie.checkCookie('Auth');

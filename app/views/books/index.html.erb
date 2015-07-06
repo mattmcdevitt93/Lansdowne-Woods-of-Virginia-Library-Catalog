@@ -10,8 +10,8 @@
       <option value="Copyright">Copyright</option>
     </select> - 
     <input type="Search" name="Search" id='searchBar'> - 
-    <input type="button" value='Search' id='search' class='btn btn-primary' onclick='Model.search()'>
-    <input type="button" value='Show All Books' id='viewAll' class='btn btn-primary' onclick='Model.toggleAll()'>
+    <input type="button" value='Search' id='search' class='btn btn-default' onclick='Model.search()'>
+    <input type="button" value='Show All Books' id='viewAll' class='btn btn-default' onclick='Model.toggleAll()'>
 
   </form>
 </div>
@@ -29,8 +29,8 @@
         <th>Call #</th>
         <th class='col-md-2'>Title</th>
         <th>Subtitle</th>
-        <th>Author first</th>
         <th>Author last</th>
+        <th>Author first</th>
         <th>Copyright</th>
         <th>Subject</th>
         <!-- <th class='col-md-4'>Annotation</th> -->
@@ -44,8 +44,8 @@
         <td class='Call_num'><%= book.Call_num %></td>
         <td class='Title'><%= book.Title %></td>
         <td class='Subtitle'><%= book.Subtitle %></td>
-        <td class='Author_first'><%= book.Author_first %></td>
         <td class='Author_last'><%= book.Author_last %></td>
+        <td class='Author_first'><%= book.Author_first %></td>
         <td class='Copyright'><%= book.Copyright %></td>
         <td class='Subject'><%= book.Subject %></td>
         <!-- <td class='Annotation'><%= book.Annotation.truncate(250) %></td> -->

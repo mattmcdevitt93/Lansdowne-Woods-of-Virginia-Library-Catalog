@@ -33,6 +33,7 @@ th {
 .headder {
 	position: fixed;
 	width: 100%;
+	min-width: 900px;
 	padding-left: 10%;
 	padding-right: 10%;
 	background-color: #cccccc;
@@ -72,4 +73,16 @@ th {
 
 .Author_last {
 	text-decoration: underline;
+}
+
+.title {
+	font-size: 72px;
+	float: left;
+	padding-top: 15px;
+	padding-left: 90px;
+	min-width: 485px;
+}
+
+.form_field {
+	font-size: 16px;
 }

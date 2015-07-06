@@ -2,7 +2,7 @@
 var Cookie = {};
 var Model = {};
 
-Model.authCode = '12345';
+Model.authCode = 'LWVAWL';
 Model.addButton = $('.addbtn');
 Model.showTable = false;
 Model.searchSensitivity = 5;
@@ -10,6 +10,7 @@ Model.searchSensitivity = 5;
 
 $(document).ready(function() {
 	console.log( 'ready!!!' );
+	Model.header_resize();	
 	Model.events();
 });
 
@@ -22,6 +23,12 @@ Model.events = function () {
 			console.log('prevented default');
 			Model.search();
 		}});
+};
+
+Model.header_resize = function () {
+	console.log('resize');
+	var padding = $('.headder').height() + 10;
+	$('.buffer').css('height', padding);
 };
 
 // ----------------------------------------------------------------------------
@@ -118,7 +125,7 @@ Model.results = function (results, keywords) {
 	var rLength = results.length;
 	$('#results').addClass('btn-success');
 	$('#results').removeClass('btn-warning');
-	$('#results').html( 'Results - There are ' + rLength + ' results fom your search for "' + keywords + '"');
+	$('#results').html( 'Results - There are ' + rLength + ' results for your search for "' + keywords + '"');
 	$('#results').removeClass('hidden');
 	if (rLength > 0) {
 		$('#tableKey').removeClass('hidden');
