@@ -76,10 +76,10 @@ th {
 }
 
 .title {
-	font-size: 72px;
+	font-size: 64px;
 	float: left;
-	padding-top: 15px;
-	padding-left: 90px;
+	padding-top: 2.5%;
+	padding-left: 2%;
 	min-width: 485px;
 }
 
