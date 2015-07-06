@@ -38,7 +38,7 @@ th {
 	position: fixed;
 	width: 100%;
 	min-width: 965px;
-	max-height: 25%;
+	/*max-height: 25%;*/
 	padding-left: 10%;
 	padding-right: 10%;
 	background-color: #cccccc;
