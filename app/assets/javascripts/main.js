@@ -136,6 +136,9 @@ Model.results = function (results, keywords) {
 		console.log(s);
 		$('#' + s).removeClass('hidden');
 	}
+	Model.showTable = true;
+	document.getElementById('viewAll').value = 'Hide Table';
+
 };
 
 Model.notice = function (string) {
