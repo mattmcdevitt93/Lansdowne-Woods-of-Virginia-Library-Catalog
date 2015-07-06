@@ -5,7 +5,7 @@ div {
 body {
 	background-color: #cccccc;
 	background-image: url('http://i.imgur.com/XQuiwrN.png');
-	font-size: 18px;
+	font-size: 16px;
 	font-family: 'Crete Round', serif;
 }
 
@@ -79,7 +79,6 @@ th {
 .title {
 	font-size: 52px;
 	float: left;
-	/*padding-top: 2.5%;*/
 	padding-left: 2%;
 	min-width: 485px;
 }

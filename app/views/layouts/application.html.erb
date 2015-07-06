@@ -18,13 +18,16 @@
 			<div class='title'>
 				Wilson Library
 			</div>
-			</div>
+
+			<div class='linkBar'>
 			<%= link_to 'Home Page', root_path, class: 'col-md-2 btn btn-default' %>
 			<%= link_to 'Add New Book', new_book_path, id: 'addBtn', class: 'addBtn col-md-2 btn btn-warning' %>
 			<%= link_to 'Login Computer', login_path, class: 'col-md-2 btn btn-info' %>
 			<%= link_to 'Contact Support', contact_path, class: 'col-md-2 btn btn-default' %>
+			</div>
 
-
+			
+			</div>
 			 <script type="text/javascript">
 				Cookie.checkCookie('Auth');
   			</script>
