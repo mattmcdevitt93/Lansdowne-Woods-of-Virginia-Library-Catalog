@@ -239,7 +239,7 @@ Cookie.getCookie = function(key){
 Cookie.makeCookie = function(key, token) {
 	var now = new Date();
 	var time = now.getTime();
-	time += 3600 * 1000;
+	time += 7200 * 1000;
 	now.setTime(time);
 	var temp = key + '=' + token + '; expires=' + now.toUTCString();
 	document.cookie = temp;

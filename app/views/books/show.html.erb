@@ -1,44 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Call num:</strong>
-  <%= @book.Call_num %>
-</p>
+<table>
+<tr>
+  <td><strong>Call num:</strong></td>
+  <td class='show_entry'><%= @book.Call_num %></td>
+</tr>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.Title %>
-</p>
+<tr>
+  <td><strong>Title:</strong></td>
+  <td><%= @book.Title %></td>
+</tr>
 
-<p>
-  <strong>Subtitle:</strong>
-  <%= @book.Subtitle %>
-</p>
+<tr>
+  <td><strong>Subtitle:</strong></td>
+  <td><%= @book.Subtitle %></td>
+</tr>
 
-<p>
-  <strong>Author first:</strong>
-  <%= @book.Author_first %>
-</p>
+<tr>
+  <td><strong>Author first:</strong></td>
+  <td><%= @book.Author_first %></td>
+</tr>
 
-<p>
-  <strong>Author last:</strong>
-  <%= @book.Author_last %>
-</p>
+<tr>
+  <td><strong>Author last:</strong></td>
+  <td><%= @book.Author_last %></td>
+</tr>
 
-<p>
-  <strong>Copyright:</strong>
-  <%= @book.Copyright %>
-</p>
+<tr>
+  <td><strong>Copyright:</strong></td>
+  <td><%= @book.Copyright %></td>
+</tr>
 
-<p>
-  <strong>Subject:</strong>
-  <%= @book.Subject %>
-</p>
+<tr>
+  <td><strong>Subject:</strong></td>
+  <td><%= @book.Subject %></td>
+</tr>
 
-<p>
-  <strong>Annotation:</strong>
-  <%= @book.Annotation %>
-</p>
+<tr>
+  <td><strong>Annotation:</strong></td>
+  <td><%= @book.Annotation %></td>
+</tr>
+
+</table>
 <%= link_to 'Back', books_path, class: 'col-md-2 btn btn-default' %> |
 <%= link_to 'Edit', edit_book_path(@book), class: 'addBtn col-md-2 btn btn-warning' %> |
 <%= link_to 'Destroy', @book, method: :delete, data: { confirm: 'Are you sure?' }, class: 'addBtn col-md-2 btn btn-warning' %>

@@ -36,6 +36,7 @@ table {
 
 .linkBar {
 	float: left;
+	padding-left: 20px;
 }
 
 .headder {
@@ -93,4 +94,13 @@ table {
 
 .form_field {
 	font-size: 16px;
+}
+
+.faq {
+	font-size: 18px;
+}
+
+.show_entry {
+	/*width: 100%;*/
+	min-width: 250px;
 }
