@@ -1,15 +1,15 @@
 <div class=' btn-lg active search' id='search'>
   <form>
-    Search Library by 
+    Search Library by
 
     <select id='type'>
-      <option value="Title">Title</option>
-      <option value="Author_last">Author</option>
-      <option value="Subject">Subject</option>
       <option value="Call_num">Call Number</option>
+      <option value="Title">Title</option>
+      <!-- <option value="Subject">Subject</option> -->
+      <option value="Author_last">Author</option>
       <option value="Copyright">Copyright</option>
-    </select> - 
-    <input type="Search" name="Search" id='searchBar'> - 
+    </select> -
+    <input type="Search" name="Search" id='searchBar'> -
     <input type="button" value='Search' id='search' class='btn btn-default' onclick='Model.search()'>
     <input type="button" value='Show All Books' id='viewAll' class='btn btn-default' onclick='Model.toggleAll()'>
 
