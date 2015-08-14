@@ -1,6 +1,6 @@
 'use strict';
-var Cookie = {};
-var Model = {};
+var Cookie =  Cookie || {};
+var Model = Model || {};
 
 Model.authCode = 'LWVAWL';
 Model.addButton = $('.addbtn');
@@ -10,7 +10,7 @@ Model.searchSensitivity = 5;
 
 $(document).ready(function() {
 	console.log( 'ready!!!' );
-	Model.header_resize();	
+	Model.headerResize();
 	Model.events();
 });
 
@@ -25,7 +25,7 @@ Model.events = function () {
 		}});
 };
 
-Model.header_resize = function () {
+Model.headerResize = function () {
 	console.log('resize');
 	var padding = $('.headder').height();
 	$('.buffer').css('height', padding + 10);
@@ -34,7 +34,7 @@ Model.header_resize = function () {
 
 // ----------------------------------------------------------------------------
 // SEARCH FUNCTIONALITY
-// ---------------------------------------------------------------------------- 
+// ----------------------------------------------------------------------------
 
 Model.search = function() {
 	var error = false;
@@ -52,7 +52,7 @@ Model.search = function() {
 			error = 'Invalid_year';
 			console.log('Error Invalid Year');
 		}
-		s = 2;
+		s = 20;
 	}
 
 	if (error === false) {
@@ -65,30 +65,28 @@ Model.search = function() {
 			if (error === false) {
 				var d = Model.getEditDistance(keywords, a);
 				console.log(d);
-		if (d < s) { // THE CHECK
-			console.log('MATCH', i);
-			console.log(queryData[i]);
-			r.push(queryData[i].parentNode.id);
+				var w = (100*(d / s));
+				if (d < w) { // THE CHECK
+					console.log('MATCH', i);
+					console.log(queryData[i]);
+					r.push(queryData[i].parentNode.id);
+				}
+			}
 		}
-	} 
-
-}
-
-Model.results(r, keywords);
-} else if (error === 'Invalid_year'){
-	Model.notice('Not a valid year to search by');
-} else {
-	Model.notice('Sorry there was an error with the search.');	
-}
-
+		Model.results(r, keywords);
+	} else if (error === 'Invalid_year'){
+		Model.notice('Not a valid year to search by');
+	} else {
+		Model.notice('Sorry there was an error with the search.');
+	}
 };
 
 // Compute the edit distance between the two given strings
 
 Model.getEditDistance = function (a, b) {
 
-	if(a.length === 0) {return b.length;} 
-	if(b.length === 0) {return a.length;} 
+	if(a.length === 0) {return b.length;}
+	if(b.length === 0) {return a.length;}
 
 	var matrix = [];
 
@@ -215,34 +213,6 @@ Model.disable = function() {
 
 Model.enable = function() {
 	$('.addBtn').removeClass('disabled');
-};
-
-// ----------------------------------------------------------------------------
-// COOKIES - Yum
-// ----------------------------------------------------------------------------
-
-Cookie.checkCookie = function(cookie) {
-	if ((Cookie.getCookie(cookie) === 'null') || (Cookie.getCookie(cookie) === undefined) || (Cookie.getCookie(cookie) === null)) {
-    console.log('No Auth'); // change this once i get the ability to pull the next name from the back end
-    Model.disable();
-} else {
-	console.log('Cookie value is = ' + Cookie.getCookie(cookie));
-	Model.enable();
-}
-};
-
-Cookie.getCookie = function(key){
-	var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
-	return keyValue ? keyValue[2] : null;
-};
-
-Cookie.makeCookie = function(key, token) {
-	var now = new Date();
-	var time = now.getTime();
-	time += 7200 * 1000;
-	now.setTime(time);
-	var temp = key + '=' + token + '; expires=' + now.toUTCString();
-	document.cookie = temp;
 };
 
 
