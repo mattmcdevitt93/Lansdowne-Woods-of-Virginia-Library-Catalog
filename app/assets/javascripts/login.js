@@ -22,10 +22,14 @@ Model.login = function() {
 
 Model.disable = function() {
   $('.addBtn').addClass('disabled');
+  $('.login').removeClass('hidden');
+  $('.logout').addClass('hidden');
 };
 
 Model.enable = function() {
   $('.addBtn').removeClass('disabled');
+  $('.login').addClass('hidden');
+  $('.logout').removeClass('hidden');
 };
 
 

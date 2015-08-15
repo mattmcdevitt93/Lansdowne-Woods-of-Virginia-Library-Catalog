@@ -9,7 +9,7 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
-<body onresize='Model.header_resize()'>
+<body onresize='Model.headerResize()'>
 		<div class='headder'>
 			<div class='col-md-10'>
 				<h1>
@@ -21,7 +21,9 @@
 
 			<div class='linkBar'>
 			<%= link_to 'Home Page', root_path, class: 'btn btn-default' %>
-			<%= link_to 'Login Computer', login_path, class: 'btn btn-info' %>
+			<%= link_to 'Login Computer', login_path, class: 'btn btn-info login'  %>
+			<div class='btn btn-info logout' onclick='Cookie.deleteCookie("Auth")'> Logout</div>
+
 			<%= link_to 'Add New Book', new_book_path, id: 'addBtn', class: 'addBtn btn btn-warning' %>
 			<%= link_to 'FAQs', contact_path, class: 'btn btn-default' %>
 			</div>
