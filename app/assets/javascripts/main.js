@@ -64,6 +64,7 @@ Model.toggleAll = function () {
 		document.getElementById('viewAll').value = 'Hide Table';
 
 	}
+	Cookie.checkCookie('Auth');
 };
 
 Model.viewAll = function () {
