@@ -47,6 +47,7 @@ table {
 	width: 100%;
 	min-width: 965px;
 	max-height: 30%;
+	min-height: 125px;
 	padding-left: 10%;
 	padding-right: 10%;
 	background-color: #cccccc;
@@ -57,6 +58,7 @@ table {
 
 .buffer {
 	height: 175px;
+	min-height: 125px;
 }
 
 .search {
@@ -74,6 +76,11 @@ table {
 
 .hidden {
 	visibility: hidden;
+}
+
+.Superhidden {
+	visibility: hidden;
+	display: none;
 }
 
 .table {

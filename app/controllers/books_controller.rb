@@ -75,6 +75,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:Call_num, :Title, :Subtitle, :Author_first, :Author_last, :Copyright, :Subject, :Annotation)
+      params.require(:book).permit(:Call_num, :Title, :Subtitle, :Author_first, :Author_last, :Copyright, :Subject, :Annotation, :created_at, :updated_at)
     end
 end

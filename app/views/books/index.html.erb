@@ -12,6 +12,8 @@
     <input type="Search" name="Search" id='searchBar'> -
     <input type="button" value='Search' id='search' class='btn btn-default' onclick='Model.search()'>
     <input type="button" value='Show All Books' id='viewAll' class='btn btn-default' onclick='Model.toggleAll()'>
+    <input type="button" value='FB backup' id='backup' class='btn btn-default Superhidden' onclick='Model.backup()'>
+
 
   </form>
 </div>
@@ -22,10 +24,10 @@
 <div class='col-md-12 table'>
   <div id="notice" class='col-md-12'><%= notice %></div>
   <% if @books != nil %>
-<!-- <hr>
-  <div class='results_tbl'></div>
-<hr> -->
-  <table>
+<hr>
+  <div id='resultsTtbl'></div>
+<hr>
+  <table id='table'>
     <thead>
       <tr id='tableKey' class='hidden'>
         <th class='col-md-2'>Call #</th>
@@ -35,12 +37,12 @@
         <th>Author first</th>
         <th class='col-md-1'>Copyright</th>
         <th class='col-md-4'>Subject</th>
-        <!-- <th class='col-md-4'>Annotation</th> -->
+        <th class='Superhidden'>Annotation</th>
         <th class='col-md-1'></th>
       </tr>
     </thead>
 
-    <tbody>
+    <tbody id='tbody'>
       <% @books.each do |book| %>
       <tr id='<%= book.id %>' class='tbrow hidden' >
         <td class='Call_num'><%= book.Call_num %></td>
@@ -50,7 +52,9 @@
         <td class='Author_first'><%= book.Author_first %></td>
         <td class='Copyright'><%= book.Copyright %></td>
         <td class='Subject'><%= book.Subject %></td>
-        <!-- <td class='Annotation'><%= book.Annotation.truncate(250) %></td> -->
+        <td class='Annotation Superhidden'><%= book.Annotation.truncate(250) %></td>
+        <td class='created_at Superhidden'><%= book.created_at %></td>
+        <td class='updated_at Superhidden'><%= book.updated_at %></td>
         <td ><%= link_to 'Show More', book, class: 'btn btn-default' %></td>
       </tr>
       <% end %>
