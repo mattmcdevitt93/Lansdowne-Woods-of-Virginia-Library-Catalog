@@ -16,6 +16,7 @@ Model.backup = function() {
 
     // Gather data
     var temp = document.getElementById(i);
+    if (temp !== null) {
     var a = temp.getElementsByClassName('Call_num')[0].innerHTML;
     var b = temp.getElementsByClassName('Title')[0].innerHTML;
     var c = temp.getElementsByClassName('Subtitle')[0].innerHTML;
@@ -40,6 +41,8 @@ Model.backup = function() {
     };
     console.log(fbPush);
     Model.FirebaseRef.push().set(fbPush);
+
+    }
   }
 };
 
