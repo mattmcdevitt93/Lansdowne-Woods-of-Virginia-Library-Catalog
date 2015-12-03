@@ -10,18 +10,19 @@ Model.search = function() {
   var error = false;
   var type = $('#type').val();
   var keywords = $('#searchBar').val();
-  var k = Model.regexTrim(keywords);
+
   var queryData = document.querySelectorAll( '.' + type );
   var queryLength = queryData.length;
   var r = [];
   var s = Model.searchSensitivity;
 
   if (type === 'Copyright') {
-    var yearChk = Model.regexChkYear(k);
+    var yearChk = Model.regexChkYear(keywords);
     if (yearChk === false) {
       error = 'Invalid_year';
       console.log('Error Invalid Year');
     }
+    s = 2;
   }
 
   if (error === false) {
@@ -29,21 +30,20 @@ Model.search = function() {
     for (var i = 0; i < queryLength; i++) {
 
       var a = queryData[i].innerHTML;
-      a = Model.regexTrim(a);
-      var f = a.length - (a.length * (s / 100));
-      console.log('query length = ', a.length);
+      console.log(a);
+
       if (error === false) {
-        var d = Model.getEditDistance(k, a);
-        console.log (a, ' - distance = ', d, ' check threshold = ', f);
-        if (d <= f) { // THE CHECK
-          console.log('MATCH');
+        var d = Model.getEditDistance(keywords, a);
+        console.log(d);
+
+        if (d < s) { // THE CHECK
+          console.log('MATCH', i);
+          console.log(queryData[i]);
           r.push(queryData[i].parentNode.id);
         }
       }
     }
-    Model.results(r, keywords); // Post results
-
-    // Model.resultsRefactor();
+    Model.results(r, keywords);
   } else if (error === 'Invalid_year'){
     Model.notice('Not a valid year to search by');
   } else {
@@ -88,11 +88,6 @@ Model.getEditDistance = function (a, b) {
 return matrix[b.length][a.length];
 
 };
-
-Model.resultsRefactor = function () {
-  console.log('results refactor');
-};
-
 
 Model.results = function (results, keywords) {
   Model.hideAll();
