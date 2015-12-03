@@ -55,18 +55,19 @@ Model.search = function() {
   var error = false;
   var type = $('#type').val();
   var keywords = $('#searchBar').val();
-  var k = Model.regexTrim(keywords);
+
   var queryData = document.querySelectorAll( '.' + type );
   var queryLength = queryData.length;
   var r = [];
   var s = Model.searchSensitivity;
 
   if (type === 'Copyright') {
-    var yearChk = Model.regexChkYear(k);
+    var yearChk = Model.regexChkYear(keywords);
     if (yearChk === false) {
       error = 'Invalid_year';
       console.log('Error Invalid Year');
     }
+    s = 2;
   }
 
   if (error === false) {
@@ -74,21 +75,26 @@ Model.search = function() {
     for (var i = 0; i < queryLength; i++) {
 
       var a = queryData[i].innerHTML;
-      a = Model.regexTrim(a);
-      var f = a.length - (a.length * (s / 100));
-      console.log('query length = ', a.length);
+      console.log(a);
+
       if (error === false) {
-        var d = Model.getEditDistance(k, a);
-        console.log (a, ' - distance = ', d, ' check threshold = ', f);
-        if (d <= f) { // THE CHECK
-          console.log('MATCH');
+        var d = Model.getEditDistance(keywords, a);
+        console.log(d);
+
+        if (d < s) { // THE CHECK
+          console.log('MATCH', i);
+          console.log(queryData[i]);
           r.push(queryData[i].parentNode.id);
         }
       }
     }
+<<<<<<< HEAD
     // Model.results(r, keywords);
 
     Model.resultsRefactor(r, keywords);
+=======
+    Model.results(r, keywords);
+>>>>>>> parent of ad597d9... made search standardized and slightly less dumb, set to 80%
   } else if (error === 'Invalid_year'){
     Model.notice('Not a valid year to search by');
   } else {
@@ -134,6 +140,7 @@ return matrix[b.length][a.length];
 
 };
 
+<<<<<<< HEAD
 Model.resultsRefactor = function (results, keywords) {
   var rLength = results.length;
   Model.resultFormat(rLength, keywords);
@@ -151,6 +158,8 @@ Model.resultsRefactor = function (results, keywords) {
 };
 
 
+=======
+>>>>>>> parent of ad597d9... made search standardized and slightly less dumb, set to 80%
 Model.results = function (results, keywords) {
   var rLength = results.length;
   Model.resultFormat(rLength, keywords);

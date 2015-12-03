@@ -5,7 +5,7 @@ var Model = Model || {};
 Model.authCode = 'LWVAWL';
 Model.addButton = $('.addbtn');
 Model.showTable = false;
-Model.searchSensitivity = 80; // percent of matching entries
+Model.searchSensitivity = 5;
 
 
 $(document).ready(function() {
@@ -20,13 +20,13 @@ Model.events = function () {
 	$( '#searchBar' ).keypress(function() {
 		if ( event.which === 13 ) {
 			event.preventDefault();
-			// console.log('prevented default');
+			console.log('prevented default');
 			Model.search();
 		}});
 };
 
 Model.headerResize = function () {
-	// console.log('resize');
+	console.log('resize');
 	var padding = $('.headder').height();
 	$('.buffer').css('height', padding + 10);
 	$('.masthead_image').css('height', padding - 15);
@@ -45,11 +45,6 @@ Model.regexChkYear = function (s) {
 Model.regexChkCallNum = function (s) {
 	var r = new RegExp ('[0-9]{3}');
 	return r.test(s);
-};
-
-Model.regexTrim = function (s) {
-	s = s.toLowerCase();
-	return s.replace(/\s/g, '');
 };
 
 
