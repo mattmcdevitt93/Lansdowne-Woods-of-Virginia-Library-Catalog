@@ -5,7 +5,7 @@ var Model = Model || {};
 Model.authCode = 'LWVAWL';
 Model.addButton = $('.addbtn');
 Model.showTable = false;
-Model.searchSensitivity = 5;
+Model.searchSensitivity = 3;
 
 
 $(document).ready(function() {

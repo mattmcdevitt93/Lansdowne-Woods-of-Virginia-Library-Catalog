@@ -22,7 +22,7 @@ Model.search = function() {
       error = 'Invalid_year';
       console.log('Error Invalid Year');
     }
-    s = 2;
+    s = 1;
   }
 
   if (error === false) {
