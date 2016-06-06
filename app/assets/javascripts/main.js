@@ -2,7 +2,7 @@
 var Cookie =  Cookie || {};
 var Model = Model || {};
 
-Model.authCode = 'LWVAWL';
+Model.authCode = 'WLdatabaseLW';
 Model.addButton = $('.addbtn');
 Model.showTable = false;
 Model.searchSensitivity = 3;
