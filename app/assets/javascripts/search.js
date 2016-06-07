@@ -58,6 +58,9 @@ Model.getEditDistance = function (a, b) {
   if(a.length === 0) {return b.length;}
   if(b.length === 0) {return a.length;}
 
+  a = a.toLowerCase();
+  b = b.toLowerCase();
+
   var matrix = [];
 
   // increment along the first column of each row
