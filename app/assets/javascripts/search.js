@@ -92,6 +92,11 @@ return matrix[b.length][a.length];
 
 };
 
+Model.search_regex = function (d) {
+
+  return d;
+}
+
 Model.results = function (results, keywords) {
   Model.hideAll();
   var rLength = results.length;
