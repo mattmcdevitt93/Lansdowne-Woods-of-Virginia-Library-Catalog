@@ -21,13 +21,13 @@ Model.login = function() {
 };
 
 Model.disable = function() {
-  $('.addBtn').addClass('disabled');
+  $('.addBtn').addClass('hidden');
   $('.login').removeClass('hidden');
   $('.logout').addClass('hidden');
 };
 
 Model.enable = function() {
-  $('.addBtn').removeClass('disabled');
+  $('.addBtn').removeClass('hidden');
   $('.login').addClass('hidden');
   $('.logout').removeClass('hidden');
 };
