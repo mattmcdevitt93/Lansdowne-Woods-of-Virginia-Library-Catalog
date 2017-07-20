@@ -36,7 +36,7 @@ class BooksController < ApplicationController
       @search = Book.search_by_full_name(params[:params])
 
     elsif params[:search] == "Copyright"
-      @search = Book.search_by_year(params[:params])
+      @search = Book.where('Copyright' => params[:params])
     end
       
 
