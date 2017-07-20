@@ -24,19 +24,19 @@ class BooksController < ApplicationController
     if params[:search] == nil
       redirect_to root_path
     elsif params[:search] == "Title"
-      @search = Book.search_by_title("%" + params[:params] + "%")
+      @search = Book.search_by_title(params[:params])
 
     elsif params[:search] == "Call_num"
-      @search = Book.search_by_call_number("%" + params[:params] + "%")
+      @search = Book.search_by_call_number(params[:params])
 
     elsif params[:search] == "Subject"
-      @search = Book.search_by_subject("%" + params[:params] + "%")
+      @search = Book.search_by_subject(params[:params])
 
     elsif params[:search] == "Author"
-      @search = Book.search_by_full_name("%" + params[:params] + "%")
+      @search = Book.search_by_full_name(params[:params])
 
     elsif params[:search] == "Copyright"
-      @search = Book.search_by_year("%" + params[:params] + "%")
+      @search = Book.search_by_year(params[:params])
     end
       
 
