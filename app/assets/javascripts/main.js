@@ -12,6 +12,7 @@ $(document).ready(function() {
 	console.log( 'ready!!!' );
 	Model.headerResize();
 	Model.events();
+	Cookie.checkCookie('Auth');
 });
 
 // Fixes return key for search
@@ -28,8 +29,8 @@ Model.events = function () {
 Model.headerResize = function () {
 	console.log('resize');
 	var padding = $('.headder').height();
-	$('.buffer').css('height', padding + 10);
-	$('.masthead_image').css('height', padding - 15);
+	$('.buffer').css('height', padding + 7);
+	// $('.masthead_image').css('height', padding - 15);
 };
 
 

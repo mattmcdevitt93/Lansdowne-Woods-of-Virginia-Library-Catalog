@@ -9,9 +9,39 @@ class BooksController < ApplicationController
 
   # GET /books
   # GET /books.json
-def index
-    @books = Book.all.order(:Author_last)
-end
+  def index
+  Rails.logger.info "Current Page Index?: " + request.path.to_s
+      @books = Book.all.order(:Author_last)
+  end
+
+  def search
+    Rails.logger.info "search:" + params[:search]
+    Rails.logger.info "params: '" + params[:params] + "'"
+    if params[:search].to_s == ''
+      Rails.logger.info "Redirect Root"
+
+    end
+    if params[:search] == nil
+      redirect_to root_path
+    elsif params[:search] == "Title"
+      @search = Book.search_by_title("%" + params[:params] + "%")
+
+    elsif params[:search] == "Call_num"
+      @search = Book.search_by_call_number("%" + params[:params] + "%")
+
+    elsif params[:search] == "Subject"
+      @search = Book.search_by_subject("%" + params[:params] + "%")
+
+    elsif params[:search] == "Author"
+      @search = Book.search_by_full_name("%" + params[:params] + "%")
+
+    elsif params[:search] == "Copyright"
+      @search = Book.search_by_year("%" + params[:params] + "%")
+    end
+      
+
+
+  end
 
   # GET /books/1
   # GET /books/1.json
@@ -48,7 +78,7 @@ end
   def update
     respond_to do |format|
       if @book.update(book_params)
-        format.html { redirect_to @book, notice: 'Book was successfully updated.' }
+        format.html { redirect_to :back, notice: 'Book was successfully updated.' }
         format.json { render :show, status: :ok, location: @book }
       else
         format.html { render :edit }
@@ -75,6 +105,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:Call_num, :Title, :Subtitle, :Author_first, :Author_last, :Copyright, :Subject, :Annotation)
+      params.require(:book).permit(:Call_num, :Title, :Subtitle, :Author_first, :Author_last, :Copyright, :Subject, :Annotation, :status)
     end
 end

@@ -1,37 +1,7 @@
-<!-- <div class='search' id='search'>
-  <form>
-    Search Library by
-
-    <select id='type'>
-      <option value="Call_num">Call Number</option>
-      <option value="Title">Title</option>
-      <option value="Author_last">Author</option>
-      <option value="Copyright">Copyright</option>
-      <option value="Subject">Subject</option>
-    </select> -
-    <input type="Search" name="Search" id='searchBar'> -
-    <input type="button" value='Search' id='search' class='btn btn-default' onclick='Model.search()'>
-    <input type="button" value='Show All Books' id='viewAll' class='btn btn-default' onclick='Model.toggleAll()'>
-
-  </form>
-</div>
-
-<div class='btn-success btn-lg active results hidden' id='results'>
-
-</div> -->
-
-<div class='search col-md-12' id='search'>
-  <%= form_tag({ controller: 'books', action: 'search' }, method: 'get') do %>
-    Search Library by
-    <%= select_tag 'search', options_for_select(['Subject','Title', 'Call_num','Author','Copyright']) %>
-    <%= text_field_tag 'params' %>
-    <%= submit_tag 'New Search', class: 'btn btn-default' %>
-  <% end %>
-</div>
-
 Table Render
 
 <div class='col-md-12 table'>
+  <div id="notice" class='col-md-12'><%= notice %></div>
   <% if @books != nil %>
 
   <table>
@@ -71,5 +41,3 @@ Table Render
   <% end %>
 
 </div>
-
-

@@ -1,0 +1,42 @@
+
+<% @search.each do |book| %>
+<div class='col-md-12 search-item'>
+        <div class='col-md-8'>
+                <span class='Call_num'><%= book.Call_num %></span> - Copyright: (
+                <span class='Copyright'><%= book.Copyright %></span>
+                )
+                <br>
+                <span class='Title'><%= book.Title %></span>
+                <span class='Subtitle'><%= book.Subtitle %></span>
+                <br>
+                <span class='Author_last'><%= book.Author_last %></span>
+                <span class='Author_first'><%= book.Author_first %></span>
+                <br>
+                <span class='status'>
+                        <% if book.status == true %>
+                                Checked In
+                        <% elsif book.status == false %>
+                                Checked Out
+                        <% else %>
+                                Requires Update
+                        <% end %>
+                </span>
+        </div>
+
+        <div class='col-md-4'>
+                <%= link_to 'More Info', book, class: 'btn btn-default' %>
+                <% if book.status == true %>
+                    <%= form_for(book) do |f| %>
+                      <%= f.hidden_field :status, value: false %>
+                      <%= f.submit 'Check Out Book', class: 'btn btn-default' %>
+                  <% end %>
+                <% else %>
+                    <%= form_for(book) do |f| %>
+                      <%= f.hidden_field :status, value: true %>
+                      <%= f.submit 'Return Book', class: 'btn btn-default' %>
+                  <% end %>
+                <% end %>
+        </div>
+</div>
+
+<% end %>

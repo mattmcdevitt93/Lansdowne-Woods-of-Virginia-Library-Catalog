@@ -21,12 +21,15 @@ Model.login = function() {
 };
 
 Model.disable = function() {
+  console.log('Disable Login');
+
   $('.addBtn').addClass('hidden');
   $('.login').removeClass('hidden');
   $('.logout').addClass('hidden');
 };
 
 Model.enable = function() {
+  console.log('Enable Login');
   $('.addBtn').removeClass('hidden');
   $('.login').addClass('hidden');
   $('.logout').removeClass('hidden');

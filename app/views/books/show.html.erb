@@ -1,48 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div>
+<h1><%= @book.Title %></h1>
+<h3><%= @book.Subtitle %></h3>
+By <%= @book.Author_first %><%= @book.Author_last %>
+</div>
+<hr>
+<div>Call Number: <%= @book.Call_num %></div>
+<div>Copyright: <%= @book.Copyright %> </div>
+<div>Subject: <%= @book.Subject %> </div>
+  <% if @book.Annotation != '' %>
+    <div>Annotations: <%= @book.Annotation %></div>
+  <% end %>
+<div>
+Current Status: 
 
-<table>
-<tr>
-  <td><strong>Call num:</strong></td>
-  <td class='show_entry'><%= @book.Call_num %></td>
-</tr>
-
-<tr>
-  <td><strong>Title:</strong></td>
-  <td><%= @book.Title %></td>
-</tr>
-
-<tr>
-  <td><strong>Subtitle:</strong></td>
-  <td><%= @book.Subtitle %></td>
-</tr>
-
-<tr>
-  <td><strong>Author first:</strong></td>
-  <td><%= @book.Author_first %></td>
-</tr>
-
-<tr>
-  <td><strong>Author last:</strong></td>
-  <td><%= @book.Author_last %></td>
-</tr>
-
-<tr>
-  <td><strong>Copyright:</strong></td>
-  <td><%= @book.Copyright %></td>
-</tr>
-
-<tr>
-  <td><strong>Subject:</strong></td>
-  <td><%= @book.Subject %></td>
-</tr>
-
-<tr>
-  <td><strong>Annotation:</strong></td>
-  <td><%= @book.Annotation %></td>
-</tr>
-
-</table>
+<% if @book.status == true %>
+  Checked In ( <%= @book.updated_at.to_formatted_s(:long)   %> )
+    <%= form_for(@book) do |f| %>
+      <%= f.hidden_field :status, value: false %>
+      <%= f.submit 'Check Out Book', class: 'btn btn-primary' %>
+  <% end %>
+<% elsif @book.status == false  %>
+  Checked Out ( <%= @book.updated_at.to_formatted_s(:long)   %> )
+    <%= form_for(@book) do |f| %>
+      <%= f.hidden_field :status, value: true %>
+      <%= f.submit 'Return Book', class: 'btn btn-primary' %>
+  <% end %>
+<% else %>
+  Requires Update
+    <%= form_for(@book) do |f| %>
+      <%= f.hidden_field :status, value: true %>
+      <%= f.submit 'Check In Book', class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
+</div>
+<hr>
 <%= link_to 'Back', books_path, class: 'col-md-2 btn btn-default' %>
+
 <%= link_to 'Edit', edit_book_path(@book), class: 'addBtn col-md-2 btn btn-warning' %>
 <%= link_to 'Remove Entry', @book, method: :delete, data: { confirm: 'Are you sure?' }, class: 'addBtn col-md-2 btn btn-warning' %>
 

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'books#index'
   get '/contact' => 'books#contact'
   get '/login' => 'books#login'
+  get '/search' => 'books#search'
+  get '/book_index' => 'books#book_index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

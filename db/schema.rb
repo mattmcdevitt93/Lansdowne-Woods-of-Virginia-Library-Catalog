@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150603021815) do
+ActiveRecord::Schema.define(version: 20170714165222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pg_trgm"
 
   create_table "books", force: true do |t|
     t.string   "Call_num"
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150603021815) do
     t.text     "Annotation"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.boolean  "status"
   end
 
 end

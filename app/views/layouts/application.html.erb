@@ -2,47 +2,48 @@
 <html>
 <head>
 	<title>LWVA Wilson Library Catalog</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
 	<%= stylesheet_link_tag 'application', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
-<body onresize='Model.headerResize()'>
+<body>
 		<div class='headder'>
-			<div class='col-md-10'>
-				<h1>
-					<%= link_to (image_tag "LansdowneWoodsLogo-Screen.png", class: 'masthead_image pull-left '), root_path %>
-				</h1>
-			<div class='title'>
-				Wilson Library
+			<div>
+				<%= link_to (image_tag "LansdowneWoodsLogo-Screen.png", class: 'masthead_image'), root_path %>
+
+				<div class='title'>
+					Wilson Library Catalog
+				</div>
 			</div>
 
-			<div class='linkBar'>
+			 <script type="text/javascript">
+			 'use strict';
+			 	var Cookie =  Cookie || {};
+				Cookie.checkCookie('Auth');
+			    Model.headerResize();
+
+  			</script>
+  			<div class='linkBar'>
 			<%= link_to 'Home Page', root_path, class: 'btn btn-default' %>
 			<%= link_to 'Login Computer', login_path, class: 'btn btn-info login'  %>
 			<div class='btn btn-info logout' onclick='Cookie.deleteCookie("Auth")'> Logout</div>
 
 			<%= link_to 'Add New Book', new_book_path, id: 'addBtn', class: 'addBtn btn btn-warning' %>
 			<%= link_to 'FAQs', contact_path, class: 'btn btn-default' %>
+			<% if request.path.to_s == '/' %>
+			<input type="button" value='Show All Books' id='viewAll' class='btn btn-default' onclick='Model.toggleAll()'>
+			<% end %>
 			</div>
-
-
-			</div>
-			 <script type="text/javascript">
-			 'use strict';
-			 	var Cookie =  Cookie || {};
-				var Model = Model || {};
-				Cookie.checkCookie('Auth');
-				Model.headerResize();
-  			</script>
 		</div>
-	<div class='container'>
 
+	<div class='container'>
 		<div class='buffer'>
 		</div>
 
+
+		<!-- yield Goes here -->
 		<%= yield %>
 
 	</div>

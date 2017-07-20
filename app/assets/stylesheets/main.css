@@ -32,38 +32,48 @@ table {
 	font-size: 18px;
 }
 
+.buffer {
+	min-height: 160px;
+}
 .masthead_image {
-	max-width: 100%;
 	max-height: 150px;
+	border-style: double;
+	border-width: 5px;
+	border-color: #FFF;
+	float: left;
+	padding: 2px;
+	margin: 5px;
+	margin-right: 10px;
+	float: right;
 }
 
 .linkBar {
-	float: left;
+	/*float: left;*/
 	padding-left: 20px;
+	min-width: 950px;
+	background-color: #FFF;
+	padding: 5px;
 }
 
 .headder {
 	position: fixed;
 	width: 100%;
 	min-width: 965px;
-	max-height: 30%;
 	padding-left: 10%;
 	padding-right: 10%;
-	background-color: #cccccc;
-	background-image: url('http://i.imgur.com/XQuiwrN.png');
+	background-color: #FFF;
+	/*background-image: url('http://i.imgur.com/XQuiwrN.png');*/
 	z-index: 5;
 	border-bottom: thick double #333333;
 }
 
-.buffer {
-	height: 175px;
-}
-
 .search {
+	padding: 5px;
 	position: fixed;
 	z-index: 5;
 	background-color: #eee;
 	width: 100%;
+	border-radius: 0px 0px 0px 20px;
 }
 
 .results {
@@ -89,14 +99,18 @@ table {
 }
 
 .title {
-	font-size: 36px;
-	float: left;
+	font-size: 48px;
 	padding-left: 2%;
 	min-width: 485px;
 }
 
 .form_field {
 	font-size: 16px;
+	width: 150px;
+}
+
+.form_area {
+	width: 500px;
 }
 
 .faq {
@@ -106,4 +120,12 @@ table {
 .show_entry {
 	/*width: 100%;*/
 	min-width: 250px;
+}
+
+.search-item {
+	font-size: 18px;
+	border-top: 2px solid #EEE;
+	border-bottom: 1px solid #EEE;
+	padding-bottom: 5px;
+	padding-top: 5px;
 }
