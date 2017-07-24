@@ -4,11 +4,13 @@
         <div class='col-md-10'>
                 <span class='Call_num'><%= book.Call_num %></span>
                 <br>
-                <span class='Title'><h3><%= book.Title %></h3></span>
+                <span class='Title'><%= book.Title %></span>
                 <span class='Subtitle'><%= book.Subtitle %></span>
                 <hr>
+                <% if book.Author_last != "" || book.Author_first != "" %>
                 <span class='Author_last'><%= book.Author_last %>, </span>
                 <span class='Author_first'><%= book.Author_first %></span>
+                <% end %>
                 <br>
                 Copyright: (<span class='Copyright'><%= book.Copyright %></span>) - Subjects: <span><%= book.Subject %></span>
                 <br>
