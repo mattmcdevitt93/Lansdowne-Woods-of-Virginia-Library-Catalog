@@ -13,7 +13,7 @@
                 Copyright: (<span class='Copyright'><%= book.Copyright %></span>) - Subjects: <span><%= book.Subject %></span>
                 <br>
                 <span><%= book.Annotation %></span>
-
+                <div>
                 <span class='status'>
                         <% if book.status == true %>
                                Status: Checked In
@@ -23,6 +23,7 @@
                                <!--  Requires Update -->
                         <% end %>
                 </span>
+                </div>
         </div>
 
         <div class='col-md-2'>
