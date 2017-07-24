@@ -33,14 +33,12 @@ class BooksController < ApplicationController
       @search = Book.search_by_subject(params[:params])
 
     elsif params[:search] == "Author"
-      @search = Book.search_by_full_name(params[:params])
+      @search = Book.search_by_full_name(params[:params]).reorder(:Author_last, :Author_first)
 
     elsif params[:search] == "Copyright"
       @search = Book.where('Copyright' => params[:params])
     end
       
-
-
   end
 
   # GET /books/1
