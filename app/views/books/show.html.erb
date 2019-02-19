@@ -10,7 +10,7 @@ By <%= @book.Author_first %><%= @book.Author_last %>
   <% if @book.Annotation != '' %>
     <div>Annotations: <%= @book.Annotation %></div>
   <% end %>
-<div>
+<div class='hidden'>
 Current Status: 
 
 <% if @book.status == true %>

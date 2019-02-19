@@ -23,7 +23,7 @@
 <div class='search col-md-12' id='search'>
   <%= form_tag({ controller: 'books', action: 'search' }, method: 'get') do %>
     Search Library by
-    <%= select_tag 'search', options_for_select(['Subject','Title', 'Call_num','Author','Copyright']) %>
+    <%= select_tag 'search', options_for_select(['Title', 'Call_num','Author','Copyright', 'Subject']) %>
     <%= text_field_tag 'params' %>
     <%= submit_tag 'New Search', class: 'btn btn-default' %>
   <% end %>
